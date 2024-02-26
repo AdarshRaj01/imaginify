@@ -13,7 +13,6 @@ export async function createUser(user: CreateUserParams) {
 
     const newUser = await User.create(user);
 
-    console.log('newUser  +++++', newUser)
 
 
     return JSON.parse(JSON.stringify(newUser));
@@ -29,7 +28,6 @@ export async function getUserById(userId: string) {
 
     const user = await User.findOne({ clerkId: userId });
 
-    console.log('userLoginbyId  +++++', user)
 
 
     if (!user) throw new Error("User not found");
